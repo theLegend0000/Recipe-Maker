@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from recipe.views import recipe, delete_recipe, update_recipe
+from recipe.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,7 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",recipe, name="recipe"),
     path("delete-recipe/<id>/",delete_recipe, name="delete_recipe"),
-    path("update-recipe/<id>/",update_recipe, name="update_recipe")
+    path("update-recipe/<id>/",update_recipe, name="update_recipe"),
+    path("login/",login_page, name="login_page"),
+    path("logout/",logout_page, name="logout_page"),
+    path("register/",register_page, name="register_page"),
     
 ]
 
